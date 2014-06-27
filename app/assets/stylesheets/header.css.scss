@@ -1,0 +1,32 @@
+header {
+  width: 100%;
+  margin-bottom: 4em;
+
+  #wrap-header {
+    height: 60px;
+    margin: 0 2%;
+  }
+
+  .header-left {
+    float: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .header-right {
+    float: right;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  #header-logo {
+
+  }
+
+  #header-nav {
+    li {
+      display: inline-block;
+      padding: 12px 0.6em;
+    }
+  }
+}
