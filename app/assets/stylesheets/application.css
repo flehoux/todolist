@@ -11,6 +11,7 @@
  * file per style scope.
  *
  *= require reset.css.scss
+ *= require layout.css.scss
  *= require_tree .
  *= require_self
  */

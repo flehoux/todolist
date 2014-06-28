@@ -10,8 +10,10 @@
 <body>
 
 <%= render 'layouts/header' %>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<div id="message_box">
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+</div>
 <%= yield %>
 <%= render 'layouts/footer' %>
 
