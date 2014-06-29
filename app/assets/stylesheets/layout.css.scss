@@ -1,5 +1,33 @@
-#message_box {
-  text-align: center;
+* {
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box; 
 }
 
-.notice .alert {}
+#main_content {
+  margin: 0 1em;
+
+  .message_box {
+    padding: 1em;
+    text-align: center;
+  }
+
+  .form_box {
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5em 2em;
+    border-radius: 4px;
+    background: #EDEDED;
+    text-align: center;
+    
+
+    .row {
+      margin-top: 0.5em;
+    }
+  }
+
+  .multiple_form_box {
+    margin-top: 2em;
+  }
+}
