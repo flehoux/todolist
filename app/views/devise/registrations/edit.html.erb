@@ -15,6 +15,15 @@
         <!-- <div>Currently waiting confirmation for: <%# resource.unconfirmed_email %></div> -->
       <%# end %>
 
+      <div class="row two-columns">
+        <div class="input">
+          <%= f.text_field :first_name, autocomplete: "off", :placeholder => "First name" %>
+        </div>
+        <div class="input">
+          <%= f.text_field :last_name, autocomplete: "off", :placeholder => "Last name" %>
+        </div>
+      </div>
+
       <div class="row">
         <div class="input">
           <%= f.password_field :current_password, autocomplete: "off", :placeholder => "Current password" %>

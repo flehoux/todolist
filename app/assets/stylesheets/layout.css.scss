@@ -23,7 +23,11 @@
     
 
     .row {
-      margin-top: 0.5em;
+      margin-top: 5px;
+    }
+
+    .row.two-columns {
+      font-size: 0;
     }
   }
 

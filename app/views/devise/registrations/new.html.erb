@@ -11,6 +11,15 @@
         </div>
       </div>
 
+      <div class="row two-columns">
+        <div class="input">
+          <%= f.text_field :first_name, autocomplete: "off", :placeholder => "First name" %>
+        </div>
+        <div class="input">
+          <%= f.text_field :last_name, autocomplete: "off", :placeholder => "Last name" %>
+        </div>
+      </div>
+
       <div class="row">
         <div class="input">
           <%= f.password_field :password, autocomplete: "off", :placeholder => "Password" %>

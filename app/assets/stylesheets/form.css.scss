@@ -9,6 +9,16 @@
   background-color: #fff;
 }
 
+.two-columns .input {
+  width: 50%;
+  font-size: 16px;
+  display: inline-block;
+}
+
+.row.two-columns .input+.input {
+  padding-left: .5em;
+}
+
 input[type="text"], input[type="email"], input[type="password"], textarea {
   -webkit-appearance: none;
 }
