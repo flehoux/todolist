@@ -1,8 +1,8 @@
-<div id="face-picture" class="control-toggle"></div>
+<!-- <div id="face-picture" style="background-image:#{current_user.photo.url(:thumbnail_2x)};"></div> -->
+<%= image_tag(current_user.photo.url(:thumbnail_2x), :id => "face-picture") %>
 <div id="header-name">
   <span><%= current_user.first_name %> <%= current_user.last_name %></span>
   <div id="dropdown-arrow" class="icon icon-text">
-    <!-- <span class="button-text rotate-down"><</span> -->
     <
   </div>
     <nav id="dropdown-box" class="signed-in gray-link small-text">

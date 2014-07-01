@@ -28,17 +28,17 @@ header {
       border-radius: 50%;
       border: 1px solid #979797;
       margin-right: 0.5em;
-      background-image: image-url("face-icon.png");
-      background-size: 40px 40px;
+      // background-image: image-url("face-icon.png");
+      // background-size: 40px 40px;
     }
 
-    @media 
-    (-webkit-min-device-pixel-ratio: 2), 
-    (min-resolution: 192dpi) { 
-        #face-picture {
-          background-image: image-url("face-icon@2x.png");
-        }
-    }
+    // @media 
+    // (-webkit-min-device-pixel-ratio: 2), 
+    // (min-resolution: 192dpi) { 
+    //     #face-picture {
+    //       background-image: image-url("face-icon@2x.png");
+    //     }
+    // }
 
     #header-name {
       vertical-align: top;

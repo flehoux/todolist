@@ -11,6 +11,8 @@ end
 
 # Auth gem
 gem 'devise', '3.2.4'
+# Paperclip - picture upload manager
+gem 'paperclip', github: 'thoughtbot/paperclip'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
