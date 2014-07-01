@@ -1,19 +1,15 @@
-<header>
+<header class="no-select">
   <div id="wrap-header">
     <div id="header-logo" class="header-left">
       <%= link_to 'todoli.st', root_path, :class => "logo-text" %>
     </div>
 
     <div id="header-nav" class="header-right">
-      <nav>
-        <ul>
-          <% if user_signed_in? %>
-            <%= render 'layouts/signed_in_header' %>
-          <% else %>
-            <%= render 'layouts/signed_out_header' %>
-          <% end %>
-        </ul>
-      </nav>
+      <% if user_signed_in? %>
+        <%= render 'layouts/signed_in_header' %>
+      <% else %>
+        <%= render 'layouts/signed_out_header' %>
+      <% end %>
     </div>
   </div>
 </header>

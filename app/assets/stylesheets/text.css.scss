@@ -47,6 +47,36 @@ h4 {
   color: red;
 }
 
+.icon-text {
+  // display: block;
+  font-size: 12px;
+  color: #595959;
+}
+
+.rotate-right {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.rotate-up {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.rotate-down {
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
 header {
 
   .logo-text {
@@ -56,13 +86,18 @@ header {
     line-height: 49px;
   }
 
-  #header-nav {
-    a {
-      color: #E47676;;
-    }
-    a:hover {
-      color: #000000;
-    }
+  .pink-link {
+    color: #E47676;
+  }
+  .pink-link:hover {
+    color: #000000;
+  }
+
+  .gray-link {
+    color: #888888;
+  }
+  .gray-link:hover {
+    color: #000000;
   }
 }
 

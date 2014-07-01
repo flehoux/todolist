@@ -9,8 +9,8 @@ header {
 
   .header-left {
     float: left;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 6px;
+    margin-bottom: 5px;
   }
 
   .header-right {
@@ -19,14 +19,55 @@ header {
     margin-bottom: 10px;
   }
 
-  #header-logo {
-
-  }
-
   #header-nav {
-    li {
+
+    #face-picture {
       display: inline-block;
-      padding: 12px 0.6em;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid #979797;
+      margin-right: 0.5em;
+      background-image: image-url("face-icon.png");
+      background-size: 40px 40px;
+    }
+
+    @media 
+    (-webkit-min-device-pixel-ratio: 2), 
+    (min-resolution: 192dpi) { 
+        #face-picture {
+          background-image: image-url("face-icon@2x.png");
+        }
+    }
+
+    #header-name {
+      vertical-align: top;
+      display: inline-block;
+      color: #E47676;
+      margin: 12px 0;
+    }
+    #header-name:hover {
+      color: #E18A8A;
+      cursor: pointer;
+    }
+
+    nav.signed-out {
+      li {
+        display: inline-block;
+        padding: 4px 0.6em;
+      }
+    }
+
+    #dropdown-box {
+      margin-top: 0.5em;
+      // background-color: #EDEDED;
+      display: none;
+    }
+
+    nav.signed-in {
+      li {
+        padding: 0.3em 1em;
+      }
     }
   }
 }

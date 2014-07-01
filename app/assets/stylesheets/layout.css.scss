@@ -4,6 +4,26 @@
   box-sizing: border-box; 
 }
 
+.no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.icon {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0.2em;
+
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
 #main_content {
   margin: 0 1em;
 
