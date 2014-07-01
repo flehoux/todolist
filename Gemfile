@@ -13,6 +13,8 @@ end
 gem 'devise', '3.2.4'
 # Paperclip - picture upload manager
 gem 'paperclip', github: 'thoughtbot/paperclip'
+# Support retina images
+gem 'retina_rails', '~> 2.0.0'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'

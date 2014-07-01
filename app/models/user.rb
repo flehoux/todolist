@@ -2,7 +2,9 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
-  has_attached_file :photo, styles: { :thumbnail => '40x40', :thumbnail_2x => '80x80' }
+
+  retina!
+  has_attached_file :photo, styles: { :thumb => '40x40' }
   validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
 
   validates :first_name, presence: true
