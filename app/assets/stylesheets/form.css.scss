@@ -9,13 +9,13 @@
   background-color: #fff;
 }
 
-.two-columns .input {
+.two-columns .input, .action {
   width: 50%;
   font-size: 16px;
   display: inline-block;
 }
 
-.row.two-columns .input+.input {
+.row.two-columns .input+.input, .action+.action {
   padding-left: .5em;
 }
 
