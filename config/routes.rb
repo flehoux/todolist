@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => { registrations: 'registrations' }
 
+  devise_for :users, :controllers => { registrations: 'registrations' }
   devise_scope :user do
-    # get “/my/url”, to: “MyController#Action”, as: “my_helper_method”
     post  "/users/delete_photo" => "registrations#delete_photo", :as => "registration_delete_photo"
   end
 
