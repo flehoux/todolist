@@ -1,0 +1,7 @@
+<div class="centered-container">
+  <%= link_to "Create a project", new_project_path, method: :get, :class => "button button-red" %>
+</div>
+
+<% if @projects.any? %>
+  <%= render @projects %>
+<% end %>

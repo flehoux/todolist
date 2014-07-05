@@ -24,8 +24,26 @@
   transition: all 0.3s ease;
 }
 
+.icon-circle {
+  width: 13px;
+  height: 13px;
+
+  border-radius: 50%;
+  border: 1px solid #979797;
+  line-height: 9px;
+  text-align: center;
+}
+
+.thumbnail {
+  // display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #979797;
+  // margin-right: 0.5em;
+}
+
 #main_content {
-  margin: 0 1em;
 
   .message_box {
     padding: 1em;
@@ -53,5 +71,13 @@
 
   .multiple_form_box {
     margin-top: 2em;
+  }
+
+  .centered-container {
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5em;
+    padding: 1.5em 2em;
   }
 }

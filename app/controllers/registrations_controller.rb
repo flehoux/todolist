@@ -1,5 +1,9 @@
 class RegistrationsController < Devise::RegistrationsController
 
+  def after_sign_up_path_for(user)
+    projects_path
+  end
+
   def delete_photo
     current_user.photo = nil
     current_user.save

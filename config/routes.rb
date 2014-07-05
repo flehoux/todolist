@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
 
-  devise_for :users, :controllers => { registrations: 'registrations' }
+  devise_for :users, :controllers => { registrations: 'registrations', sessions: 'sessions' }
   devise_scope :user do
     post  "/users/delete_photo" => "registrations#delete_photo", :as => "registration_delete_photo"
   end
 
-  root  to: 'static_pages#home'
+  resources :projects
   get '/contact',   to: 'static_pages#contact'
+  root  to: 'static_pages#home'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
