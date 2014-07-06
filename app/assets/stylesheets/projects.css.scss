@@ -39,3 +39,18 @@
     margin-left: 10px;
   }
 }
+
+@media (min-width: 0px) and (max-width: 520px) {
+  .project-left {
+    // display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .project-right {
+    margin-top: 25px;
+    text-align: center;
+    width: 100%;
+    // display: block;
+  }
+}
