@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :authenticate_user!
-  before_action :current_project, only: [:show, :edit, :update, :destroy]
+  before_action :load_project, only: [:show, :edit, :update, :destroy]
   before_action :allowed_user, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -20,7 +20,7 @@ class ProjectsController < ApplicationController
       flash[:notice] = "Project created!"
       redirect_to projects_path
     else
-      redirect_to new_project_path
+      render 'new'
     end
   end
 
@@ -43,12 +43,12 @@ class ProjectsController < ApplicationController
 
   private
 
-    def project_params
-      params.require(:project).permit(:title, :description)
+    def load_project
+      @project = Project.find(params[:id])
     end
 
-    def current_project
-      @project = Project.find(params[:id])
+    def project_params
+      params.require(:project).permit(:title, :description)
     end
 
     def allowed_user

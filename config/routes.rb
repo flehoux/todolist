@@ -5,7 +5,9 @@ Rails.application.routes.draw do
     post  "/users/delete_photo" => "registrations#delete_photo", :as => "registration_delete_photo"
   end
 
-  resources :projects
+  resources :projects do
+    resources :tasks, only: [:new, :create, :edit, :update, :destroy]
+  end
   get '/contact',   to: 'static_pages#contact'
   root  to: 'static_pages#home'
 

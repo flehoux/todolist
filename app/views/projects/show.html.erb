@@ -1,3 +1,7 @@
+<div class="centered-container">
+  <%= link_to "New task", new_project_task_path(@project, :category => 1), method: :get, :class => "button button-red" %>
+</div>
+
 <%= render @project %>
 
 <div class="container">

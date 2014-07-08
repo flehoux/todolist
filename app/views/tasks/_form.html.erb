@@ -1,0 +1,33 @@
+<%= form_for [@project, @task] do |f| %>
+  <% if @task.errors.any? %>
+  <div id="error_explanation" class="small-text error-text">
+    <ul>
+    <% @task.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <div class="form-inputs">
+    <div class="row">
+      <div class="input">
+        <%= f.text_field :title, autocomplete: "off", :placeholder => "Title" %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input">
+        <%= f.text_field :description, autocomplete: "off", :placeholder => "Description" %>
+      </div>
+    </div>
+  </div>
+
+  <%= f.hidden_field :category, :value=> fill_category %>
+
+  <div class="form-actions">
+    <div class="row">
+      <%= f.submit :class => "button button-red" %>
+    </div>
+  </div>
+<% end %>
