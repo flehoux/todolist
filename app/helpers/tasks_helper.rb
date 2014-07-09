@@ -11,14 +11,14 @@ module TasksHelper
   def previous_category_button(task)
     return "" if task.category == 1
 
-    link = link_to "<", project_task_path(@project, task.id, task: { category: task.category - 1 }), method: :patch
+    link = link_to project_task_path(@project, task.id, task: { category: task.category - 1 }), method: :patch do
+      content_tag :div, :class => "previous-cat" do
+        content_tag :div, '<', :class => "icon icon-text previous-icon"
+      end
+    end
 
     html = <<-HTML
-    <div class="previous-cat">
-      <div class="icon icon-text previous-icon">
-          #{link}
-      </div>
-    </div>
+      #{link}
     HTML
 
     html.html_safe
@@ -27,14 +27,14 @@ module TasksHelper
   def next_category_button(task)
     return "" if task.category == 3
 
-    link = link_to ">", project_task_path(@project, task.id, task: { category: task.category + 1 }), method: :patch
+    link = link_to project_task_path(@project, task.id, task: { category: task.category + 1 }), method: :patch do
+      content_tag :div, :class => "next-cat" do
+        content_tag :div, '>', :class => "icon icon-text next-icon"
+      end
+    end
 
     html = <<-HTML
-    <div class="next-cat">
-      <div class="icon icon-text next-icon">
-          #{link}
-      </div>
-    </div>
+      #{link}
     HTML
 
     html.html_safe
