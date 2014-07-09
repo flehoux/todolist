@@ -75,6 +75,7 @@
 .c1, .c2, .c3 {
   width: 100%;
   min-height: 200px;
+  padding-bottom: 30px;
 }
 
 .column-name {
@@ -143,14 +144,26 @@
 
   .previous-cat {
     left: 0;
+
+    .previous-icon {
+      position: absolute;
+      top: 45%;
+      left: 20%;
+    }
   }
   .next-cat{
     right: 0;
+
+    .next-icon {
+      position: absolute;
+      top: 45%;
+      right: 20%;
+    }
   }
 
   .task-content {
     margin: 0 30px;
-    padding: 15px;
+    padding: 20px 15px;
     border-bottom: 1px solid #979797;
   }
 
