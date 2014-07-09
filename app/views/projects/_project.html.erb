@@ -7,13 +7,11 @@
     <div class="project-right">
       <div class="collaborators">
         <%= retina_image_tag(current_user, :photo, :thumb, :default => [40, 40], :class => "thumbnail") %>
-        <div class="commands">
-          <div class="icon icon-text icon-circle">
-            <%= link_to '+', '#', method: :delete %>
-          </div>
-        </div>
       </div>
       <div class="commands">
+        <div class="icon icon-text icon-circle">
+          <%= link_to 'e', edit_project_path(project) %>
+        </div>
         <div class="icon icon-text icon-circle">
           <%= link_to 'x', project_path(project), method: :delete, data: { confirm: 'Are you sure?' } %>
         </div>

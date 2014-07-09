@@ -8,6 +8,9 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    @ideas = @project.tasks.where(category: 1)
+    @progress = @project.tasks.where(category: 2)
+    @completed = @project.tasks.where(category: 3)
   end
 
   def new
