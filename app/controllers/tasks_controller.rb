@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   before_action :load_project, only: [:new, :create, :edit, :update, :destroy]
+  before_action :allowed_user, only: [:edit, :update, :destroy]
   before_action :load_task, only: [:edit, :update, :destroy]
 
   def new
@@ -9,7 +10,6 @@ class TasksController < ApplicationController
   def create
     @task = @project.tasks.build(task_params)
     if @task.save
-      flash[:notice] = "Project created!"
       redirect_to @project
     else
       render 'new'
@@ -45,5 +45,9 @@ class TasksController < ApplicationController
 
     def task_params
       params.require(:task).permit(:title, :description, :category)
+    end
+
+    def allowed_user
+      redirect_to(projects_path) unless current_user == @project.user
     end
 end
