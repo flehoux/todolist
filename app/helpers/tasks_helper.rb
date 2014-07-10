@@ -11,7 +11,7 @@ module TasksHelper
   def previous_category_button(task)
     return "" if task.category == 1
 
-    link = link_to project_task_path(@project, task.id, task: { category: task.category - 1 }), method: :patch do
+    link = link_to project_task_path(@project, task.id, task: { category: task.category - 1 }), remote: true, method: :patch do
       content_tag :div, :class => "previous-cat" do
         content_tag :div, '<', :class => "icon icon-text previous-icon"
       end
@@ -27,7 +27,7 @@ module TasksHelper
   def next_category_button(task)
     return "" if task.category == 3
 
-    link = link_to project_task_path(@project, task.id, task: { category: task.category + 1 }), method: :patch do
+    link = link_to project_task_path(@project, task.id, task: { category: task.category + 1 }), remote: true, method: :patch do
       content_tag :div, :class => "next-cat" do
         content_tag :div, '>', :class => "icon icon-text next-icon"
       end

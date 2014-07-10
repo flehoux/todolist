@@ -1,11 +1,10 @@
-<div class="task-row">
+<%= div_for(task, class: "task-row") do %>
   <%= previous_category_button(task) %>
   <%= next_category_button(task) %>
   <div class="task-content">
     <%= link_to edit_project_task_path(@project, task) do %>
       <h5 class="pink-text"><%= task.title %></h5>
     <% end %>
-    <!-- <span class="shifted small-text dark-gray"><%= task.description %></span> -->
     <p class="shifted small-text dark-gray"><%= task.description %></p>
   </div>
-</div>
+<% end %>

@@ -1,0 +1,3 @@
+$('#task_' + <%= @task.id %> ).remove();
+
+$('.c' + <%= @task.category %> ).append("<%= escape_javascript render(@task) %>")

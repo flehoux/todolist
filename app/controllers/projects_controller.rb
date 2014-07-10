@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
   before_action :authenticate_user!
   before_action :load_project, only: [:show, :edit, :update, :destroy]
-  before_action :allowed_user, only: [:show, :edit, :update, :destroy]
+  # before_action :allowed_user, only: [:show, :edit, :update, :destroy]
 
   def index
     @projects = current_user.projects
@@ -47,14 +47,14 @@ class ProjectsController < ApplicationController
   private
 
     def load_project
-      @project = Project.find(params[:id])
+      @project = current_user.projects.find(params[:id])
     end
 
     def project_params
       params.require(:project).permit(:title, :description)
     end
 
-    def allowed_user
-      redirect_to(projects_path) unless current_user == @project.user
-    end
+    # def allowed_user
+    #   redirect_to(projects_path) unless current_user == @project.user
+    # end
 end
