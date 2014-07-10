@@ -1,7 +1,6 @@
 class TasksController < ApplicationController
   before_action :load_project, only: [:new, :create, :edit, :update, :destroy]
-  # before_action :allowed_user, only: [:edit, :update, :destroy]
-  before_action :load_task, only: [:edit, :update, :destroy]
+  # before_action :load_task, only: [:edit, :update, :destroy]
 
   def new
     @task = @project.tasks.new
@@ -21,7 +20,7 @@ class TasksController < ApplicationController
 
   def update
     respond_to do |format|
-      if @task.update(task_params)
+      if task.update(task_params)
         format.html { redirect_to @project }
         format.js
       else
@@ -31,7 +30,7 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    @task.destroy
+    task.destroy
 
     redirect_to @project
   end
@@ -42,15 +41,15 @@ class TasksController < ApplicationController
       @project = current_user.projects.find(params[:project_id])
     end
 
-    def load_task
-      @task = @project.tasks.find(params[:id])
+    def task
+      @task ||= @project.tasks.find(params[:id])
     end
+
+    # def load_task
+    #   @task = @project.tasks.find(params[:id])
+    # end
 
     def task_params
       params.require(:task).permit(:title, :description, :category)
     end
-
-    # def allowed_user
-    #   redirect_to(projects_path) unless current_user == @project.user
-    # end
 end
