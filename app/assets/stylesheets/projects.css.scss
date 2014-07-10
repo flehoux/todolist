@@ -144,6 +144,7 @@
 
   .previous-cat {
     left: 0;
+    display: none;
 
     .previous-icon {
       position: absolute;
@@ -153,6 +154,7 @@
   }
   .next-cat{
     right: 0;
+    display: none;
 
     .next-icon {
       position: absolute;
@@ -165,6 +167,16 @@
     margin: 0 30px;
     padding: 20px 15px;
     border-bottom: 1px solid #979797;
+
+    .shown {
+
+    }
+
+    .hidden {
+      padding-top: 10px;
+      text-align: center;
+      display: none;
+    }
   }
 
   .previous-cat, .next-cat {

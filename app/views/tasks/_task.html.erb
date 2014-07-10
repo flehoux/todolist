@@ -2,9 +2,12 @@
   <%= previous_category_button(task) %>
   <%= next_category_button(task) %>
   <div class="task-content">
-    <%= link_to edit_project_task_path(@project, task) do %>
+    <div class="shown">
       <h5 class="pink-text"><%= task.title %></h5>
-    <% end %>
-    <p class="shifted small-text dark-gray"><%= task.description %></p>
+      <p class="shifted small-text dark-gray"><%= task.description %></p>
+    </div>
+    <div class="hidden">
+      <%= link_to 'edit', edit_project_task_path(@project, task), :class => "small-text" %>
+    </div>
   </div>
 <% end %>

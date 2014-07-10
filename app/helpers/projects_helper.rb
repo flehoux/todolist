@@ -11,7 +11,9 @@ module ProjectsHelper
   def project_back_link(project)
     if current_page?(new_project_path)
       projects_path
-    elsif current_page?(edit_project_path)
+    elsif current_page?(projects_path)
+      projects_path
+    elsif params[:id]
       project_path(project)
     end
   end
