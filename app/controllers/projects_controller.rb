@@ -1,16 +1,16 @@
 class ProjectsController < ApplicationController
+  include VariableHelper
+
   before_action :authenticate_user!
-  before_action :load_project, only: [:show, :edit, :update, :destroy]
-  # before_action :allowed_user, only: [:show, :edit, :update, :destroy]
 
   def index
     @projects = current_user.projects
   end
 
   def show
-    @ideas = @project.tasks.where(category: 1)
-    @progress = @project.tasks.where(category: 2)
-    @completed = @project.tasks.where(category: 3)
+    @ideas = project.tasks.where(category: 1)
+    @progress = project.tasks.where(category: 2)
+    @completed = project.tasks.where(category: 3)
   end
 
   def new
@@ -31,30 +31,22 @@ class ProjectsController < ApplicationController
   end
 
   def update
-    if @project.update(project_params)
-      redirect_to projects_path
+    if project.update(project_params)
+      redirect_to project
     else
       render 'edit'
     end
   end
 
   def destroy
-    @project.destroy
+    project.destroy
 
     redirect_to projects_path
   end
 
   private
 
-    def load_project
-      @project = current_user.projects.find(params[:id])
-    end
-
     def project_params
       params.require(:project).permit(:title, :description)
     end
-
-    # def allowed_user
-    #   redirect_to(projects_path) unless current_user == @project.user
-    # end
 end

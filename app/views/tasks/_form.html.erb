@@ -1,8 +1,8 @@
-<%= form_for [@project, task] do |f| %>
-  <% if @task.errors.any? %>
+<%= form_for [project, task] do |f| %>
+  <% if task.errors.any? %>
   <div id="error_explanation" class="small-text error-text">
     <ul>
-    <% @task.errors.full_messages.each do |msg| %>
+    <% task.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
     <% end %>
     </ul>
@@ -32,6 +32,6 @@
   </div>
 
   <p class="small-text">
-    <%= link_to 'Back', project_path(@project) %>
+    <%= link_to 'Back', project_path(project) %>
   </p>
 <% end %>

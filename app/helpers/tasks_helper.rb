@@ -1,9 +1,5 @@
 module TasksHelper
 
-  def task
-    @task ||= @project.tasks.find(params[:id])
-  end
-
   def fill_category
     if params.has_key?(:category)
       params[:category]
