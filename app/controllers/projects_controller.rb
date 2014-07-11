@@ -1,6 +1,4 @@
 class ProjectsController < ApplicationController
-  include VariableHelper
-
   before_action :authenticate_user!
 
   def index
@@ -28,6 +26,7 @@ class ProjectsController < ApplicationController
   end
 
   def edit
+    load_project
   end
 
   def update
@@ -44,9 +43,14 @@ class ProjectsController < ApplicationController
     redirect_to projects_path
   end
 
-  private
+private
 
-    def project_params
-      params.require(:project).permit(:title, :description)
-    end
+  def project
+    @project ||= current_user.projects.find(params[:id])
+  end
+  alias_method :load_project, :project
+
+  def project_params
+    params.require(:project).permit(:title, :description)
+  end
 end

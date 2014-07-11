@@ -1,6 +1,5 @@
 class TasksController < ApplicationController
-  include VariableHelper
-
+  
   def new
     @task = project.tasks.new
   end
@@ -15,7 +14,7 @@ class TasksController < ApplicationController
   end
 
   def edit
-    # load_project
+    load_task
   end
 
   def update
@@ -35,15 +34,18 @@ class TasksController < ApplicationController
     redirect_to project
   end
 
-  private
+private
 
+  def project
+    @project ||= current_user.projects.find(params[:project_id])
+  end
 
-    # def project
-    #   @project ||= current_user.projects.find(params[:project_id])
-    # end
-    # alias_method :load_project, :project
+  def task
+    @task ||= project.tasks.find(params[:id])
+  end
+  alias_method :load_task, :task
 
-    def task_params
-      params.require(:task).permit(:title, :description, :category)
-    end
+  def task_params
+    params.require(:task).permit(:title, :description, :category)
+  end
 end
