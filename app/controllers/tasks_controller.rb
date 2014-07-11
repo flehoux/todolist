@@ -15,6 +15,7 @@ class TasksController < ApplicationController
   end
 
   def edit
+    # load_project
   end
 
   def update
@@ -35,6 +36,12 @@ class TasksController < ApplicationController
   end
 
   private
+
+
+    # def project
+    #   @project ||= current_user.projects.find(params[:project_id])
+    # end
+    # alias_method :load_project, :project
 
     def task_params
       params.require(:task).permit(:title, :description, :category)
