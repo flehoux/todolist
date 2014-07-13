@@ -28,7 +28,23 @@
   display: inline-block;
 }
 
-.row.two-columns .input+.input, .action+.action {
+.row.two-columns .input+.input, .action+.action, .input+.action {
+  padding-left: .5em;
+}
+
+.action-row .input {
+  width: 85%;
+  font-size: 16px;
+  display: inline-block;
+}
+
+.action-row .action {
+  width: 15%;
+  font-size: 16px;
+  display: inline-block;
+}
+
+.row.action-row .input+.action {
   padding-left: .5em;
 }
 
@@ -78,7 +94,7 @@ input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder {
   font-size: 16px;
   font-weight: normal;
   border: 0;
-  border-radius: 8px;
+  border-radius: 3px;
   -webkit-transition: background .2s, color .2s;
   transition: background .2s, color .2s;
 }

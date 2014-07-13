@@ -2,6 +2,8 @@ class TasksController < ApplicationController
   
   def new
     @task = project.tasks.new
+    # 1.times { @task.links.build }
+    create_link
   end
 
   def create
@@ -15,6 +17,7 @@ class TasksController < ApplicationController
 
   def edit
     load_task
+    create_link
   end
 
   def update
@@ -45,7 +48,11 @@ private
   end
   alias_method :load_task, :task
 
+  def create_link
+    @task.links.build unless @task.links.any?
+  end
+
   def task_params
-    params.require(:task).permit(:title, :description, :category)
+    params.require(:task).permit(:title, :description, :category, links_attributes: [:id, :link, :_destroy])
   end
 end

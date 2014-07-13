@@ -1,5 +1,9 @@
 class Task < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :project
+  has_many :links, dependent: :destroy
+
+  accepts_nested_attributes_for :links, reject_if: proc { |attributes| attributes[:link].blank? }, 
+                                allow_destroy: true
 
   default_scope -> { order('updated_at ASC') }
 

@@ -21,6 +21,14 @@
         <%= f.text_area :description, autocomplete: "off", :placeholder => "Description" %>
       </div>
     </div>
+
+    <%= f.fields_for :links do |builder| %>
+      <%= render 'link_fields', :f => builder %>
+    <% end %>
+
+    <p class="small-text">
+      <%= link_to_add_fields('Add link', f, :links) %>
+    </p>
   </div>
 
   <%= f.hidden_field :category, :value=> fill_category %>
