@@ -7,7 +7,10 @@
       <p class="shifted small-text dark-gray"><%= task.description %></p>
     </div>
     <div class="hidden">
-      <%= link_to 'edit', edit_project_task_path(@project, task), :class => "small-text" %>
+      <ul>
+        <%= render task.links %>
+      </ul>
+      <%= link_to 'edit', edit_project_task_path(@project, task), :class => "small-text pink-text" %>
     </div>
   </div>
 <% end %>
