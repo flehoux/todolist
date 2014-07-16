@@ -2,9 +2,6 @@
 <%= retina_image_tag(current_user, :photo, :thumb, :default => [40, 40], :class => "thumbnail") %>
 <div id="header-name">
   <span><%= current_user.first_name %> <%= current_user.last_name %></span>
-  <div id="dropdown-arrow" class="icon icon-text">
-    <
-  </div>
   <nav id="dropdown-box" class="signed-in gray-link small-text">
       <ul>
         <li><%= link_to "Projects", projects_path, :class => "gray-link small-text" %></li>

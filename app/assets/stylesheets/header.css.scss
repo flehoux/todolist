@@ -19,14 +19,50 @@ header {
     margin-bottom: 10px;
   }
 
+  #drop-button {
+    width: 25px;
+    float: right;
+    margin: 21px 0;
+
+    .drop-rectangle {
+      width: 25px;
+      height: 4px;
+      border-radius: 3px;
+      background: #888888;
+      margin-top: 2px;
+
+      -webkit-transition: background .2s;
+      transition: background .2s;
+    }
+  }
+  #drop-button:hover .drop-rectangle {
+    background: #000000;
+  }
+  #drop-button:hover {
+    cursor: pointer;
+  }
+
   #header-nav {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    background: #585858;
+    background: rgba(88,88,88,0.95);
+    text-align: center;
+    display: none;
+
+    -moz-box-shadow:    inset 0px 1px 3px 0px rgba(0,0,0,0.50);
+    -webkit-box-shadow: inset 0px 1px 3px 0px rgba(0,0,0,0.50);
+    box-shadow:         inset 0px 1px 3px 0px rgba(0,0,0,0.50);
 
     .thumbnail {
       display: inline-block;
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      border: 1px solid #979797;
       margin-right: 0.5em;
     }
 
@@ -35,10 +71,6 @@ header {
       display: inline-block;
       color: #E47676;
       margin: 12px 0;
-    }
-    #header-name:hover {
-      color: #E18A8A;
-      cursor: pointer;
     }
 
     nav.signed-out {
@@ -50,13 +82,23 @@ header {
 
     #dropdown-box {
       margin-top: 0.5em;
-      display: none;
+      display: block;
+
+      position: relative;
+      left: -16%;
     }
 
     nav.signed-in {
       li {
-        padding: 0.3em 1em;
+        padding: 0.8em 1em;
       }
+    }
+
+    a {
+      color: #ffffff;
+    }
+    a:hover {
+      color: #000000;
     }
   }
 }

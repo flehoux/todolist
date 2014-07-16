@@ -4,6 +4,11 @@
       <%= link_to 'todoli.st', root_path, :class => "logo-text" %>
     </div>
 
+    <div id="drop-button">
+      <div class="drop-rectangle"></div>
+      <div class="drop-rectangle"></div>
+      <div class="drop-rectangle"></div>
+    </div>
     <div id="header-nav" class="header-right">
       <% if user_signed_in? %>
         <%= render 'layouts/signed_in_header' %>
