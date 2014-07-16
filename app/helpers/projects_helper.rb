@@ -1,7 +1,7 @@
 module ProjectsHelper
 
   def project_link(project)
-    if current_page?(projects_path)
+    if current_page?(root_path) || current_page?(projects_path)
       project_path(project)
     elsif current_page?(project_path(project))
       edit_project_path(project)
