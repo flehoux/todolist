@@ -11,11 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140711211153) do
+ActiveRecord::Schema.define(version: 20140717153950) do
 
   create_table "links", force: true do |t|
     t.string   "link"
     t.integer  "task_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "partnerships", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "project_id"
+    t.boolean  "owner",      default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -25,10 +33,7 @@ ActiveRecord::Schema.define(version: 20140711211153) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
   end
-
-  add_index "projects", ["user_id", "created_at"], name: "index_projects_on_user_id_and_created_at"
 
   create_table "tasks", force: true do |t|
     t.string   "title"

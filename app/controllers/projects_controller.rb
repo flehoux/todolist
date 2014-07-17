@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :authenticate_user!
+  before_action :owner_user, only: [:edit, :update, :destroy]
 
   def index
     @projects = current_user.projects
@@ -17,7 +18,8 @@ class ProjectsController < ApplicationController
 
   def create
     @project = current_user.projects.build(project_params)
-    if @project.save
+
+    if @project.save && @project.partnerships.create(:user_id => current_user.id, :owner => 'true')
       flash[:notice] = "Project created!"
       redirect_to projects_path
     else
@@ -52,5 +54,9 @@ private
 
   def project_params
     params.require(:project).permit(:title, :description)
+  end
+
+  def owner_user
+    redirect_to project_path(project) unless project.partnerships.find_by(user_id: current_user).owner?
   end
 end

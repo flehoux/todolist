@@ -3,7 +3,9 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :projects, dependent: :destroy
+
+  has_many :partnerships, dependent: :destroy
+  has_many :projects, :through => :partnerships
 
   retina!
   has_attached_file :photo, styles: { :thumb => '40x40' }
