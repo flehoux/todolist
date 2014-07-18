@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   resources :projects do
     resources :tasks, only: [:new, :create, :edit, :update, :destroy]
+    resources :partnerships, only: [:create, :destroy]
   end
   get '/contact',   to: 'static_pages#contact'
   root  to: 'projects#index'
