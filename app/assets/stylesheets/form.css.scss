@@ -28,7 +28,7 @@
   display: inline-block;
 }
 
-.row.two-columns .input+.input, .action+.action, .input+.action {
+.row.two-columns .input+.input, .action+.action {
   padding-left: .5em;
 }
 
@@ -46,6 +46,31 @@
 
 .row.action-row .input+.action {
   padding-left: .5em;
+}
+
+.search-row .input {
+  width: 70%;
+  font-size: 16px;
+  display: inline-block;
+
+  input[type="text"] {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+
+.search-row .action {
+  width: 30%;
+  font-size: 16px;
+  display: inline-block;
+  position: relative;
+  top: 3px;
+
+  input[type="submit"] {
+    height: 45px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
 }
 
 .field_with_errors {

@@ -13,4 +13,10 @@ class User < ActiveRecord::Base
 
   validates :first_name, presence: true
   validates :last_name, presence: true
+
+  def self.search(search)
+    if search && !search.empty?
+      where('email LIKE ?', "%#{search}%")
+    end
+  end
 end

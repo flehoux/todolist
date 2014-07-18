@@ -29,6 +29,7 @@ class ProjectsController < ApplicationController
 
   def edit
     load_project
+    @found_users = User.search(params[:search])
   end
 
   def update
