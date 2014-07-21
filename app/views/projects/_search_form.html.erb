@@ -17,7 +17,7 @@
   <div id="searched-users">
     <% if !@found_users.nil? %>
       <% @found_users.each do |user| %>
-        <div class="collaborators">
+        <div class="collaborators overlay-bg">
           <%= add_user_button(user) %>
         </div>
       <% end %>
@@ -25,7 +25,7 @@
   </div>
   <div id="current-collabs">
     <% @project.partnerships.where(:owner => false).each do |partnership| %>
-      <div class="collaborators">
+      <div class="collaborators overlay-bg">
         <%= remove_user_button(partnership) %>
       </div>
     <% end %>
