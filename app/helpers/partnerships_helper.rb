@@ -1,13 +1,15 @@
 module PartnershipsHelper
   
   def add_user_button(user)
-    link = link_to project_partnerships_path(@project, user, partnership: { user_id: user.id }), method: :post do
+    link = link_to project_partnerships_path(@project, partnership: { user_id: user.id }), method: :post do
       retina_image_tag(user, :photo, :thumb, :default => [40, 40], :class => "thumbnail") +
       content_tag(:div, '+', :class => "thumb-overlay thumbnail")
     end
 
     html = <<-HTML
-      #{link}
+      <div class="collaborators overlay-bg">
+        #{link}
+      </div>
     HTML
 
     html.html_safe
@@ -20,7 +22,9 @@ module PartnershipsHelper
     end
 
     html = <<-HTML
-      #{link}
+      <div class="collaborators overlay-bg">
+        #{link}
+      </div>
     HTML
 
     html.html_safe

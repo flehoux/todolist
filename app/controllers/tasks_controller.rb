@@ -2,7 +2,6 @@ class TasksController < ApplicationController
   
   def new
     @task = project.tasks.new
-    # 1.times { @task.links.build }
     create_link
   end
 

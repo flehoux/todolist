@@ -1,8 +1,8 @@
 class PartnershipsController < ApplicationController
-  before_action :owner_user, only: [:edit, :update, :destroy]
+  before_action :owner_user, only: [:create, :destroy]
 
   def create
-    @partnership = project.partnerships.create(partnership_params)
+    project.partnerships.create(partnership_params)
     redirect_to edit_project_path(project)
   end
 
@@ -20,7 +20,7 @@ private
   def partnership
     @partnership ||= project.partnerships.find(params[:id])
   end
-  alias_method :load_partnership, :partnership
+  # alias_method :load_partnership, :partnership
 
   def partnership_params
     params.require(:partnership).permit(:user_id)
