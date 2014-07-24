@@ -78,6 +78,7 @@ GEM
     mime-types (1.25.1)
     minitest (5.4.0)
     multi_json (1.10.1)
+    newrelic_rpm (3.9.0.229)
     orm_adapter (0.5.0)
     pg (0.15.1)
     polyglot (0.3.5)
@@ -165,6 +166,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks
+  newrelic_rpm
   paperclip!
   pg (= 0.15.1)
   rails (= 4.1.2)

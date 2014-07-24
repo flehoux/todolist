@@ -11,6 +11,8 @@ group :development, :test do
   gem 'rspec-rails', '2.13.1'
 end
 
+gem 'newrelic_rpm'
+
 # Auth gem
 gem 'devise', '3.2.4'
 # Paperclip - picture upload manager
