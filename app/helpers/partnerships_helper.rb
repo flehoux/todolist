@@ -1,30 +1,20 @@
 module PartnershipsHelper
-  
-  def add_user_button(user)
-    link = link_to project_partnerships_path(@project, partnership: { user_id: user.id }), method: :post do
-      retina_image_tag(user, :photo, :thumb, :default => [40, 40], :class => "thumbnail") +
-      content_tag(:div, '+', :class => "thumb-overlay thumbnail")
+
+  def user_role(partnership)
+    if partnership.owner?
+      'owner'
+    else
+      'partner'
     end
-
-    html = <<-HTML
-      <div class="collaborators overlay-bg">
-        #{link}
-      </div>
-    HTML
-
-    html.html_safe
   end
 
-  def remove_user_button(partnership)
-    link = link_to project_partnership_path(@project, partnership.id), method: :delete do
-      retina_image_tag(partnership.user, :photo, :thumb, :default => [40, 40], :class => "thumbnail") +
-      content_tag(:div, 'x', :class => "thumb-overlay thumbnail")
+  def link_to_remove_collab(partnership)
+    link = link_to project_access_path(@project, partnership.id), method: :delete do
+      content_tag(:span, 'x', :class => "partnership-remove small-text")
     end
 
     html = <<-HTML
-      <div class="collaborators overlay-bg">
         #{link}
-      </div>
     HTML
 
     html.html_safe

@@ -1,14 +1,18 @@
 <div class="project-options-row">
-  <div id="project-settings">
-    <div id="settings-icon" class="medium-icon"></div>
-    <div id="settings-text">
-      <span class="small-text">Settings</span>
+  <%= link_to edit_project_path(@project) do %>
+    <div id="project-settings">
+      <div id="settings-icon" class="medium-icon"></div>
+      <div id="settings-text">
+        <span class="small-text">Settings</span>
+      </div>
     </div>
-  </div>
-  <div id="project-access">
-    <div id="access-icon" class="medium-icon"></div>
-    <div id="access-text">
-      <span class="small-text">Access</span>
+  <% end %>
+  <%= link_to project_access_index_path(@project) do %>
+    <div id="project-access">
+      <div id="access-icon" class="medium-icon"></div>
+      <div id="access-text">
+        <span class="small-text">Access</span>
+      </div>
     </div>
-  </div>
+  <% end %>
 </div>

@@ -1,0 +1,15 @@
+<%= render @project %>
+
+<div id="project-options">
+  <%= render 'projects/options' %>
+
+  <div id="project-partnerships">
+    <%= render @partnerships %>
+  </div>
+
+  <div class="form_box">
+    <h3 class="spacer-bottom">Add Collaborator</h3>
+
+    <%= render 'form' %>
+  </div>
+</div>

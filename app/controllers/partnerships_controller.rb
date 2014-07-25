@@ -1,14 +1,20 @@
 class PartnershipsController < ApplicationController
-  before_action :owner_user, only: [:create, :destroy]
+  before_action :owner_user, only: [:index, :create, :destroy]
+
+  def index
+    @partnerships = project.partnerships
+    @partnership = Partnership.new
+  end
 
   def create
-    project.partnerships.create(partnership_params)
-    redirect_to edit_project_path(project)
+    @user = User.find_by(email: params[:email])
+    project.partnerships.create(user_id: @user.id)
+    redirect_to project_access_index_path(project)
   end
 
   def destroy
     partnership.destroy unless partnership.owner == true
-    redirect_to edit_project_path(project)
+    redirect_to project_access_index_path(project)
   end
 
 private
@@ -20,7 +26,6 @@ private
   def partnership
     @partnership ||= project.partnerships.find(params[:id])
   end
-  # alias_method :load_partnership, :partnership
 
   def partnership_params
     params.require(:partnership).permit(:user_id)

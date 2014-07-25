@@ -1,0 +1,20 @@
+#project-partnerships {
+  margin-top: 20px;
+  border-bottom: 1px solid #E2E2E2;
+}
+
+.partnership-row {
+  margin-bottom: 20px;
+  
+  .partnership-thumb {
+    margin-right: 20px;
+    display: inline-block;
+  }
+
+  .partnership-name, .partnership-email, .partnership-role, .partnership-remove {
+    margin-right: 20px;
+    display: inline-block;
+    vertical-align: top;
+    line-height: 30px;
+  }
+}

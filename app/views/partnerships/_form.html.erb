@@ -1,0 +1,12 @@
+<%= form_tag project_access_index_path(@project) do %>
+  <div class="form-inputs">
+    <div class="row search-row">
+      <div class="input">
+        <%= text_field_tag :email, params[:email], placeholder: "example@email.com" %>
+      </div>
+      <div class="action">
+        <%= submit_tag 'Add', :name => nil, :class => "button button-red" %>
+      </div>
+    </div>
+  </div>
+<% end %>
