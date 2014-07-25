@@ -201,7 +201,11 @@
 // TASK ROWS
 
 #project-options {
-  margin: 0 4em;
+  margin: 0 2em;
+
+  @media (min-width: 600px) {
+    margin: 0 4em;
+  }
 
   .project-options-row {
     width: 100%;
