@@ -51,6 +51,5 @@ module TasksHelper
     end
     link_to(name, '', data: { association: "#{association}", fields: "#{fields}" }, remote: true, 
                       :class => "link-add")
-    # link_to_function(name, "add_fields(this, \"#{association}\", \"#{escape_javascript(fields)}\")")
   end
 end
