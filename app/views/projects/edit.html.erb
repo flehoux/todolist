@@ -1,7 +1,11 @@
-<div class="form_box">
-  <h3>Edit project</h3>
+<%= render @project %>
 
-  <%= render 'form' %>
+<div id="project-options">
+  <%= render 'options' %>
+
+  <div class="form_box">
+    <%= render 'form' %>
+  </div>
 </div>
 
-<%= render 'search_form' %>
+<%#= render 'search_form' %>

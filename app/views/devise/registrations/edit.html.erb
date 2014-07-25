@@ -1,5 +1,5 @@
 <div class="form_box">
-  <h3>Edit <%= resource_name.to_s.humanize %></h3>
+  <h3 class="spacer-bottom">Edit <%= resource_name.to_s.humanize %></h3>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, multipart: true }) do |f| %>
     <%= devise_error_messages! %>

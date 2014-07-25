@@ -1,5 +1,5 @@
 <div class="form_box">
-  <h3>Sign in</h3>
+  <h3 class="spacer-bottom">Sign in</h3>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="form-inputs">
@@ -15,10 +15,6 @@
         </div>
       </div>
     </div>
-
-    <%# if devise_mapping.rememberable? -%>
-      <!-- <div><%# f.check_box :remember_me %> <%= f.label :remember_me %></div> -->
-    <%# end -%>
 
     <div class="form-actions">
       <div class="row">

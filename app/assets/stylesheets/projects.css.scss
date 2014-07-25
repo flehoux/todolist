@@ -200,6 +200,57 @@
 }
 // TASK ROWS
 
+#project-options {
+  margin: 0 4em;
+
+  .project-options-row {
+    width: 100%;
+    border-bottom: 1px solid #E2E2E2;
+    text-align: center;
+
+    #project-settings, #project-access {
+      width: 50px;
+      height: 57px;
+      display: inline-block;
+      margin: 20px;
+
+      #settings-icon, #access-icon {
+        margin: 0 auto;
+      }
+
+      #settings-text, #access-text {
+        margin-top: 8px;
+      }
+    }
+  }
+
+  #settings-icon {
+    background-image: image-url("settings-icon.png");
+  }
+
+  #access-icon {
+    background-image: image-url("access-icon.png");
+  }
+
+  @media 
+  (-webkit-min-device-pixel-ratio: 2), 
+  (min-resolution: 192dpi) { 
+    #settings-icon {
+      background-image: image-url("settings-icon@2x.png");
+    }
+
+    #access-icon {
+      background-image: image-url("access-icon@2x.png");
+    }
+  }
+}
+
+.medium-icon {
+  width: 30px;
+  height: 30px;
+  background-size: 30px 30px;
+}
+
 // COLLABORATION
 #searched-users {
   min-height: 1px;
