@@ -8,7 +8,9 @@ class PartnershipsController < ApplicationController
 
   def create
     @user = User.find_by(email: params[:email])
-    project.partnerships.create(user_id: @user.id)
+    if !@user.nil?
+      project.partnerships.create(user_id: @user.id)
+    end
     redirect_to project_access_index_path(project)
   end
 
