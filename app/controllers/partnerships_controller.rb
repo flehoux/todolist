@@ -29,9 +29,9 @@ private
     @partnership ||= project.partnerships.find(params[:id])
   end
 
-  def partnership_params
-    params.require(:partnership).permit(:user_id)
-  end
+  # def partnership_params
+  #   params.require(:partnership).permit(:user_id)
+  # end
 
   def owner_user
     redirect_to project_path(project) unless project.partnerships.find_by(user_id: current_user).owner?

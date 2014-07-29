@@ -1,7 +1,9 @@
 <div class="project-options-row">
   <%= link_to edit_project_path(@project) do %>
     <div id="project-settings">
-      <div id="settings-icon" class="medium-icon"></div>
+      <div id="settings-icon">
+        <i class="icon-settings"></i>
+      </div>
       <div id="settings-text">
         <span class="small-text">Settings</span>
       </div>
@@ -9,7 +11,9 @@
   <% end %>
   <%= link_to project_access_index_path(@project) do %>
     <div id="project-access">
-      <div id="access-icon" class="medium-icon"></div>
+      <div id="access-icon">
+        <i class="icon-access"></i>
+      </div>
       <div id="access-text">
         <span class="small-text">Access</span>
       </div>

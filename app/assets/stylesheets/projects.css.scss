@@ -227,32 +227,6 @@
       }
     }
   }
-
-  #settings-icon {
-    background-image: image-url("settings-icon.png");
-  }
-
-  #access-icon {
-    background-image: image-url("access-icon.png");
-  }
-
-  @media 
-  (-webkit-min-device-pixel-ratio: 2), 
-  (min-resolution: 192dpi) { 
-    #settings-icon {
-      background-image: image-url("settings-icon@2x.png");
-    }
-
-    #access-icon {
-      background-image: image-url("access-icon@2x.png");
-    }
-  }
-}
-
-.medium-icon {
-  width: 30px;
-  height: 30px;
-  background-size: 30px 30px;
 }
 
 // COLLABORATION
