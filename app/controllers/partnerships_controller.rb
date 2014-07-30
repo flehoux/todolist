@@ -10,6 +10,9 @@ class PartnershipsController < ApplicationController
     @user = User.find_by(email: params[:email])
     if !@user.nil?
       project.partnerships.create(user_id: @user.id)
+      flash[:success] = "User successfully added."
+    else
+      flash[:error] = "User does not exist."
     end
     redirect_to project_access_index_path(project)
   end

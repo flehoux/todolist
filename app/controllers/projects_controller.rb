@@ -20,7 +20,7 @@ class ProjectsController < ApplicationController
     @project = current_user.projects.build(project_params)
 
     if @project.save && @project.partnerships.create(:user_id => current_user.id, :owner => 'true')
-      flash[:notice] = "Project created!"
+      flash[:success] = "Project successfully created."
       redirect_to projects_path
     else
       render 'new'
@@ -33,6 +33,7 @@ class ProjectsController < ApplicationController
 
   def update
     if project.update(project_params)
+      flash[:success] = "Project successfully updated."
       redirect_to project
     else
       render 'edit'

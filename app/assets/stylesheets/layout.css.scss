@@ -56,13 +56,43 @@
   margin-bottom: 20px;
 }
 
-#main_content {
-  max-width: 1000px;
+#main-content {
+  max-width: 1100px;
   margin: 0 auto;
 
-  .message_box {
-    padding: 1em;
+  .messages-box {
+    padding: 1em 2em;
     text-align: center;
+
+    .message-box {
+      padding: 20px;
+      border-radius: 3px;
+
+      .message-button:before {
+        font-size: 16px;
+      }
+      .message-button {
+        float: right;
+        color: #595959;
+      }
+      .message-button:hover {
+        color: #000000;
+        cursor: pointer;
+      }
+    }
+
+    .error {
+      background-color: #FF7D7D;
+    }
+    .notice {
+      background-color: #F5DE90;
+    }
+    .alert {
+      background-color: #F5DE90;
+    }
+    .success {
+      background-color: #6CD199;
+    }
   }
 
   .form_box {

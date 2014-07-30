@@ -11,8 +11,8 @@
 <body>
 
 <%= render 'layouts/header' %>
-<div id="main_content">
-  <%= display_messages(flash[:error], flash[:notice], flash[:alert]) %>
+<div id="main-content">
+  <%= display_messages(flash[:error], flash[:notice], flash[:alert], flash[:success]) %>
   <%= yield %>
 </div>
 <%= render 'layouts/footer' %>
