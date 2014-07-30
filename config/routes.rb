@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     # resources :partnerships, only: [:index, :create, :destroy]
     resources :access, :controller => "partnerships", only: [:index, :create, :destroy]
   end
-  get '/contact',   to: 'static_pages#contact'
+  
   root  to: 'projects#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

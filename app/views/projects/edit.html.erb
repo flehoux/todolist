@@ -8,4 +8,7 @@
   </div>
 </div>
 
-<%#= render 'search_form' %>
+<div class="form_box multiple_form_box">
+  <div class="row">
+    <%= button_to "Delete Project", project_path(@project), data: { confirm: "Are you sure?" }, method: :delete, :class => "button button-red" %>
+  </div>

@@ -5,5 +5,5 @@
   <span class="partnership-name small-text"><%= partnership.user.first_name %> <%= partnership.user.last_name %></span>
   <span class="partnership-email small-text"><%= mail_to partnership.user.email %></span>
   <span class="partnership-role small-text pink-text"><%= user_role(partnership) %></span>
-  <%= link_to_remove_collab(partnership) %>
+  <%= link_to_remove_collab(partnership) unless partnership.owner? %>
 </div>

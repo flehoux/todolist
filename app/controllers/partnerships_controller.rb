@@ -15,7 +15,7 @@ class PartnershipsController < ApplicationController
   end
 
   def destroy
-    partnership.destroy unless partnership.owner == true
+    partnership.destroy unless partnership.owner?
     redirect_to project_access_index_path(project)
   end
 
@@ -28,10 +28,6 @@ private
   def partnership
     @partnership ||= project.partnerships.find(params[:id])
   end
-
-  # def partnership_params
-  #   params.require(:partnership).permit(:user_id)
-  # end
 
   def owner_user
     redirect_to project_path(project) unless project.partnerships.find_by(user_id: current_user).owner?
