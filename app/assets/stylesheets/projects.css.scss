@@ -78,6 +78,11 @@
 
   border-top: 1px solid #BDBDBD;
   border-bottom: 1px solid #BDBDBD;
+
+  @media (min-width: 1000px) {
+    border-left: 1px solid #BDBDBD;
+    border-right: 1px solid #BDBDBD;
+  }
 }
 
 #column1, #column2, #column3 {
@@ -228,20 +233,3 @@
     }
   }
 }
-
-// COLLABORATION
-#searched-users {
-  min-height: 1px;
-  margin: 20px 0;
-}
-
-#current-collabs {
-  padding-top: 20px;
-  min-height: 30px;
-  border-top: 1px solid #979797;
-}
-
-.overlay-bg {
-  position: relative;
-}
-// COLLABORATION
