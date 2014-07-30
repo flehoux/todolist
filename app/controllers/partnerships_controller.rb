@@ -9,8 +9,12 @@ class PartnershipsController < ApplicationController
   def create
     @user = User.find_by(email: params[:email])
     if !@user.nil?
-      project.partnerships.create(user_id: @user.id)
-      flash[:success] = "User successfully added."
+      temp = project.partnerships.create(user_id: @user.id)
+      if temp.valid?
+        flash[:success] = "User successfully added."
+      else
+        flash[:notice] = "User already exists."
+      end
     else
       flash[:error] = "User does not exist."
     end
