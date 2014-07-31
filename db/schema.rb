@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140717153950) do
+ActiveRecord::Schema.define(version: 20140731154812) do
 
   create_table "links", force: true do |t|
     t.string   "link"
@@ -63,7 +63,6 @@ ActiveRecord::Schema.define(version: 20140717153950) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
-    t.text     "retina_dimensions"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

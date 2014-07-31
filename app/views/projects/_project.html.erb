@@ -8,7 +8,6 @@
       <div class="project-right">
         <% project.users.first(5).each do |user| %>
           <div class="collaborators">
-            <%#= retina_image_tag(user, :photo, :thumb, :default => [40, 40], :class => "thumbnail") %>
             <%= image_tag user.photo.url(:thumb), :class => "thumbnail" %>
           </div>
         <% end %>

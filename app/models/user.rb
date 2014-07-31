@@ -7,7 +7,6 @@ class User < ActiveRecord::Base
   has_many :partnerships, dependent: :destroy
   has_many :projects, :through => :partnerships
 
-  retina!
   has_attached_file :photo, styles: { :thumb => '40x40' }
   validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
 

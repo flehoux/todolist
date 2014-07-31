@@ -1,6 +1,6 @@
 <div class="partnership-row">
   <div class="partnership-thumb">
-    <%= retina_image_tag(partnership.user, :photo, :thumb, :default => [40, 40], :class => "thumbnail") %>
+    <%= image_tag partnership.user.photo.url(:thumb), :class => "thumbnail" %>
   </div>
   <span class="partnership-name small-text"><%= partnership.user.first_name %> <%= partnership.user.last_name %></span>
   <span class="partnership-email small-text"><%= mail_to partnership.user.email %></span>

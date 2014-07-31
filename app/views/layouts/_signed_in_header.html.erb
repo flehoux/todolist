@@ -1,5 +1,4 @@
-<%# image_tag(current_user.photo.url(:thumb), :class => "thumbnail") %>
-<%= retina_image_tag(current_user, :photo, :thumb, :default => [40, 40], :class => "thumbnail") %>
+<%= image_tag current_user.photo.url(:thumb), :class => "thumbnail" %>
 <div id="header-name">
   <span><%= current_user.first_name %> <%= current_user.last_name %></span>
   <nav id="dropdown-box" class="signed-in gray-link small-text">
