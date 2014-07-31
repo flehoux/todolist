@@ -15,8 +15,12 @@ gem 'newrelic_rpm'
 
 # Auth gem
 gem 'devise', '3.2.4'
+
 # Paperclip - picture upload manager
 gem 'paperclip', github: 'thoughtbot/paperclip'
+#AWS support for Paperclip
+gem 'aws-sdk'
+
 # Support retina images
 gem 'retina_rails', '~> 2.0.0'
 
