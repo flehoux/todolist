@@ -18,7 +18,3 @@
 # Ignore other unneeded files.
 database.yml
 secrets.yml
-*.swp
-*~
-.project
-.DS_Store
