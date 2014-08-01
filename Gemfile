@@ -11,6 +11,8 @@ group :development, :test do
   gem 'rspec-rails', '2.13.1'
 end
 
+gem 'dotenv-rails', group: [:development, :test]
+
 gem 'newrelic_rpm'
 
 # Auth gem
